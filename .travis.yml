@@ -5,12 +5,47 @@ language: c
 
 before_install:
   - pwd
-  - sudo apt-get update
-  - sudo apt-get install -y build-essential autotools-dev autoconf git libssl-dev libtool xsltproc zlib1g-dev zip
   - sudo mkdir -p -m 0755 /var/empty
 
-install:
-  - echo Install step
+matrix:
+  include:
+  - os: linux
+    addons:
+      apt:
+        update: true
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - autoconf
+        - automake
+        - gcc
+        - libtool
+        - libssl-dev
+        - make
+        - unzip
+        - xsltproc
+  - os: linux
+    addons:
+      apt:
+        update: true
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - autoconf
+        - automake
+        - gcc
+        - libtool
+        - libssl-dev
+        - make
+        - unzip
+        - xsltproc
+  - os: osx
+    compiler: clang
+    before_install:
+      - brew install doxygen
+    env:
+      - ARCH=x64
+      - CC_OVERRIDE=clang
 
 script:
   - pwd
