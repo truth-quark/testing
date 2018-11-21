@@ -9,6 +9,9 @@ before_install:
   - sudo apt-get install -y build-essential autotools-dev autoconf git libssl-dev libtool xsltproc zlib1g-dev zip
   - sudo mkdir -p -m 0755 /var/empty
 
+install:
+  - echo Install step
+
 script:
   - pwd
   - cd integration/oqs_openssh
