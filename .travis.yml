@@ -1,0 +1,16 @@
+dist: xenial
+sudo: required
+
+language: c
+
+before_install:
+  - pwd
+  - sudo apt-get update
+  - sudo apt-get install -y build-essential autotools-dev autoconf git libssl-dev libtool xsltproc zlib1g-dev zip
+  - sudo mkdir -p -m 0755 /var/empty
+
+script:
+  - pwd
+  - cd integration/oqs_openssh
+  - ./run.sh | tee `date "+%Y%m%d-%Hh%Mm%Ss-openssh.log.txt"`
+  - tail -n 30 *openssh.log.txt
