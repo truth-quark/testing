@@ -24,21 +24,6 @@ matrix:
         - make
         - unzip
         - xsltproc
-  - os: linux
-    addons:
-      apt:
-        update: true
-        sources:
-        - ubuntu-toolchain-r-test
-        packages:
-        - autoconf
-        - automake
-        - gcc
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: osx
     compiler: clang
     before_install:
