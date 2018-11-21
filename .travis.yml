@@ -14,6 +14,11 @@ install:
 
 script:
   - pwd
+  - echo Running openssh-portable integration tests...
   - cd integration/oqs_openssh
   - ./run.sh | tee `date "+%Y%m%d-%Hh%Mm%Ss-openssh.log.txt"`
-  - tail -n 30 *openssh.log.txt
+  - cd ..
+  - echo
+  - echo Running openssl integration tests...
+  - cd oqs_openssl
+  - ./run.sh | tee `date "+%Y%m%d-%Hh%Mm%Ss-openssl.log.txt"`
