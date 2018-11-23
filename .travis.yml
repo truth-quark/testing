@@ -3,17 +3,7 @@ language: c
 before_install:
   - pwd
   - sudo mkdir -p -m 0755 /var/empty
-  - lsb_release -a 2>/dev/null | grep -q "14.04"
-  - IS_V14=$?
-  - if [ $IS_V14 ]
-  - then
-  -   echo "Found Ubuntu 14.04"
-  -   sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-  -   sudo apt update
-  -   sudo apt install gcc-5
-  - else
-  -   echo "Another Ubuntu version found"
-  - fi
+  - if [[ "$TRAVIS_OS_NAME" == "trusty" ]]; then echo "Found Ubuntu 14.04" && sudo add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt update && sudo apt install gcc-5 ; fi
 
 matrix:
   include:
