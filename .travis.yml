@@ -11,6 +11,8 @@ before_install:
   -   sudo add-apt-repository ppa:ubuntu-toolchain-r/test
   -   sudo apt update
   -   sudo apt install gcc-5
+  - else
+  -   echo "Another Ubuntu version found"
   - fi
 
 matrix:
