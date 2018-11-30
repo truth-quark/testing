@@ -22,6 +22,36 @@ matrix:
         - unzip
         - xsltproc
   - os: linux
+    dist: xenial
+    sudo: required
+    addons:
+      apt:
+        update: true
+        packages:
+        - autoconf
+        - automake
+        - gcc-7
+        - libtool
+        - libssl-dev
+        - make
+        - unzip
+        - xsltproc
+  - os: linux
+    dist: xenial
+    sudo: required
+    addons:
+      apt:
+        update: true
+        packages:
+        - autoconf
+        - automake
+        - gcc-8
+        - libtool
+        - libssl-dev
+        - make
+        - unzip
+        - xsltproc
+  - os: linux
     dist: trusty
     sudo: required
     addons:
