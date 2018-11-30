@@ -22,11 +22,13 @@ matrix:
         - unzip
         - xsltproc
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     addons:
       apt:
         update: true
+        sources:
+        - ubuntu-toolchain-r-test
         packages:
         - autoconf
         - automake
@@ -37,11 +39,13 @@ matrix:
         - unzip
         - xsltproc
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     addons:
       apt:
         update: true
+        sources:
+        - ubuntu-toolchain-r-test
         packages:
         - autoconf
         - automake
@@ -63,6 +67,40 @@ matrix:
         - autoconf
         - automake
         - gcc
+        - libtool
+        - libssl-dev
+        - make
+        - unzip
+        - xsltproc
+  - os: linux
+    dist: trusty
+    sudo: required
+    addons:
+      apt:
+        update: true
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - autoconf
+        - automake
+        - gcc-7
+        - libtool
+        - libssl-dev
+        - make
+        - unzip
+        - xsltproc
+  - os: linux
+    dist: trusty
+    sudo: required
+    addons:
+      apt:
+        update: true
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - autoconf
+        - automake
+        - gcc-8
         - libtool
         - libssl-dev
         - make
