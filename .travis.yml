@@ -22,7 +22,7 @@ matrix:
         - unzip
         - xsltproc
   - os: linux
-    dist: xenial
+    dist: trusty
     sudo: required
     addons:
       apt:
@@ -37,7 +37,7 @@ matrix:
         - unzip
         - xsltproc
   - os: linux
-    dist: xenial
+    dist: trusty
     sudo: required
     addons:
       apt:
