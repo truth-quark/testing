@@ -4,108 +4,58 @@ before_install:
   - pwd
   - sudo mkdir -p -m 0755 /var/empty
 
+addons:
+  apt:
+    update: true
+      packages:
+      - autoconf
+      - automake
+      - gcc
+      - libtool
+      - libssl-dev
+      - make
+      - unzip
+      - xsltproc
+
 matrix:
   include:
   - os: linux
     dist: xenial
     sudo: required
-    addons:
-      apt:
-        update: true
-        packages:
-        - autoconf
-        - automake
-        - gcc
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: linux
     dist: xenial
     sudo: required
     addons:
       apt:
-        update: true
         sources:
         - ubuntu-toolchain-r-test
-        packages:
-        - autoconf
-        - automake
-        - gcc-7
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: linux
     dist: xenial
     sudo: required
     addons:
-      apt:
-        update: true
         sources:
         - ubuntu-toolchain-r-test
-        packages:
-        - autoconf
-        - automake
-        - gcc-8
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: linux
     dist: trusty
     sudo: required
     addons:
       apt:
-        update: true
         sources:
         - ubuntu-toolchain-r-test
-        packages:
-        - autoconf
-        - automake
-        - gcc
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: linux
     dist: trusty
     sudo: required
     addons:
       apt:
-        update: true
         sources:
         - ubuntu-toolchain-r-test
-        packages:
-        - autoconf
-        - automake
-        - gcc-7
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: linux
     dist: trusty
     sudo: required
     addons:
       apt:
-        update: true
         sources:
         - ubuntu-toolchain-r-test
-        packages:
-        - autoconf
-        - automake
-        - gcc-8
-        - libtool
-        - libssl-dev
-        - make
-        - unzip
-        - xsltproc
   - os: osx
     compiler: clang
     before_install:
