@@ -10,7 +10,6 @@ addons:
       packages:
       - autoconf
       - automake
-      - gcc
       - libtool
       - libssl-dev
       - make
@@ -22,6 +21,10 @@ matrix:
   - os: linux
     dist: xenial
     sudo: required
+    addons:
+      apt:
+        packages:
+        - gcc
   - os: linux
     dist: xenial
     sudo: required
@@ -29,12 +32,23 @@ matrix:
       apt:
         sources:
         - ubuntu-toolchain-r-test
+        packages:
+        - gcc-5
   - os: linux
     dist: xenial
     sudo: required
     addons:
         sources:
         - ubuntu-toolchain-r-test
+        packages:
+        - gcc-7
+  - os: linux
+    dist: trusty
+    sudo: required
+    addons:
+      apt:
+        sources:
+        - gcc
   - os: linux
     dist: trusty
     sudo: required
@@ -42,6 +56,8 @@ matrix:
       apt:
         sources:
         - ubuntu-toolchain-r-test
+        packages:
+        - gcc-5
   - os: linux
     dist: trusty
     sudo: required
@@ -49,13 +65,8 @@ matrix:
       apt:
         sources:
         - ubuntu-toolchain-r-test
-  - os: linux
-    dist: trusty
-    sudo: required
-    addons:
-      apt:
-        sources:
-        - ubuntu-toolchain-r-test
+        packages:
+        - gcc-7
   - os: osx
     compiler: clang
     before_install:
