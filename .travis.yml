@@ -7,14 +7,14 @@ before_install:
 addons:
   apt:
     update: true
-      packages:
-      - autoconf
-      - automake
-      - libtool
-      - libssl-dev
-      - make
-      - unzip
-      - xsltproc
+    packages:
+    - autoconf
+    - automake
+    - libtool
+    - libssl-dev
+    - make
+    - unzip
+    - xsltproc
 
 matrix:
   include:
